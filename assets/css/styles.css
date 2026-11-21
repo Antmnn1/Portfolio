@@ -1,6 +1,23 @@
+/* variabili dei colori */
+:root {
+  --bg: #ffffff;
+  --fg: #000000;
+}
+
+[data-bs-theme="dark"] {
+  --bg: #000000;
+  --fg: #ffffff;
+}
+
 /* globale */
 *{
   box-sizing: border-box;
+}
+
+body{
+  background-color: var(--bg);
+  color: var(--fg);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .container{
@@ -8,6 +25,13 @@
   height: fit-content;
   padding: 16px;
   margin: 0;
+}
+
+h2{
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 3%;
+  margin: 0 0 16px 0;
 }
 
 a{
@@ -20,12 +44,18 @@ p{
   margin: 0;
   font-weight: 400;
   line-height: 120%;
-  color: black;
+  color: var(--fg);
+}
+
+input:focus,
+form textarea:focus {
+  outline: none;
+  border: 2px solid var(--fg);
 }
 
 /* header */
 nav{
-  background-color: black;
+  background-color: var(--fg);
   border-radius: 9999px;
   padding: 4px;
   height: 100%;
@@ -35,15 +65,15 @@ nav{
   font-size: 12px;
   letter-spacing: 10%;
   padding: 12px 34px;
-  color: white;
-  background-color: black;
+  color: var(--bg);
+  background-color: var(--fg);
   border-radius: 9999px;
   display: inline-block;
 }
 
 .btn-nav-active{
-  background-color: white;
-  color: black;
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
 /* body */
@@ -53,16 +83,26 @@ nav{
   margin-bottom: 80px;
 }
 
-.dark-light-mode{
+.dark-light-mode, .pulsante-input{
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  border: 1px solid black;
-  background-color: white;
+  border: 1px solid var(--fg);
+  background-color: var(--bg);
+}
+
+.pulsante-input{
+  background-color: var(--fg);
+}
+
+i.bi.bi-arrow-right{
+  color: var(--bg);
+  font-size: 16px;
 }
 
 .dark-light-mode i {
   font-size: 14px;
+  color: var(--fg);
 }
 
 .p-presentazione{
@@ -70,7 +110,7 @@ nav{
   font-weight: 500;
   line-height: 100%;
   padding-bottom: 16px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--fg);
 }
 
 #presDue>p:last-of-type{
@@ -79,7 +119,76 @@ nav{
 
 hr{
   margin: 0;
-  color: black;
+  color: var(--fg);
+}
+
+/* works */
+.lavori{
+  font-size: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--fg);
+}
+
+.titoli{
+  gap: 8px;
+}
+
+#contLavori{
+  gap: 32px;
+}
+
+/* form */
+
+#contatti{
+  margin-top: 64px;
+}
+
+form{
+  border-top: 1px solid var(--fg);
+  padding: 16px 0;
+  gap: 8px;
+}
+
+form > div:first-of-type, form > div:last-of-type{
+  gap: 8px;
+}
+
+input{
+  width: 100%;
+  border-radius: 9999px;
+  border: 1px solid var(--fg);
+  background-color: var(--bg);
+  color: var(--fg);
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 3%;
+  padding: 8px 0;
+  line-height: 0;
+}
+
+input[type="email"] {
+  width: 100%;
+}
+
+form textarea{
+  width: 100%;
+  border-radius: 9999px;
+  border: 1px solid var(--fg);
+  background-color: var(--bg);
+  color: var(--fg);
+  field-sizing: content;
+  min-height: 100px;
+  resize: none;
+  text-align: center;
+  padding: 8px 30px 0 30px;
+}
+
+::placeholder{
+  font-size: 12px;
+  letter-spacing: 10%;
+  color: var(--fg);
+  padding: 12px 0;
+  text-align: center;
 }
 
 /* footer */
@@ -89,12 +198,14 @@ address{
 }
 
 footer{
-  border-top: 1px solid black;
+  border-top: 1px solid var(--fg);
 }
 
 footer a{
-  color: black;
+  color: var(--fg);
   display: inline-block;
+  font-size: 14px;
+  letter-spacing: 3%;
 }
 
 @media (min-width: 576px) {
